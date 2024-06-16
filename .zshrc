@@ -104,27 +104,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# pnpm
-export PNPM_HOME="/home/charlierz/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
-# Turso
-export PATH="/home/charlierz/.turso:$PATH"
-
-# Go
-export GOROOT=/usr/local/go
-export GOPATH=$HOME/go
-export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-
-# neovim
-export PATH="$PATH:/opt/nvim-linux64/bin"
-
-# brew
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # fzf
 source <(fzf --zsh)
@@ -158,3 +137,43 @@ bindkey '^[[Z' autosuggest-accept # tab
 alias lg="lazygit"
 alias y="yazi"
 alias zj="zellij"
+
+if [ "$(uname -s)" = "Darwin" ]; then
+  export PATH=$PATH:$(go env GOPATH)/bin
+  export PATH="$PATH:$HOME/Development/flutter"
+  export PATH="$PATH:$HOME/Development/flutter/bin"
+  export PATH="$PATH":"$HOME/.pub-cache/bin"
+
+  # pnpm
+  export PNPM_HOME="/Users/carlos/Library/pnpm"
+  case ":$PATH:" in
+    *":$PNPM_HOME:"*) ;;
+    *) export PATH="$PNPM_HOME:$PATH" ;;
+  esac
+  # pnpm end
+
+  alias pj='npx projen'
+
+elif [ "$(uname -s)" = "Linux" ]; then
+  export GOROOT=/usr/local/go
+  export GOPATH=$HOME/go
+  export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+
+  # pnpm
+  export PNPM_HOME="/home/charlierz/.local/share/pnpm"
+  case ":$PATH:" in
+    *":$PNPM_HOME:"*) ;;
+    *) export PATH="$PNPM_HOME:$PATH" ;;
+  esac
+  # pnpm end
+
+  # Turso
+  export PATH="/home/charlierz/.turso:$PATH"
+
+  # neovim
+  export PATH="$PATH:/opt/nvim-linux64/bin"
+
+  # brew
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
