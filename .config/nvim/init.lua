@@ -369,7 +369,20 @@ require('lazy').setup({
             },
           },
         },
-        -- pickers = {}
+        pickers = {
+          find_files = {
+            find_command = {
+              'fd',
+              '--type',
+              'f',
+              '--color=never',
+              '--hidden',
+              '--follow',
+              '-E',
+              '.git/*',
+            },
+          },
+        },
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
