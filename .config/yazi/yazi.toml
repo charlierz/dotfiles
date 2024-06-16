@@ -1,0 +1,8 @@
+[manager]
+ratio = [2,2,4]
+show_hidden = true
+
+[opener]
+edit = [
+	{ run = 'hx "$@"', block = true },
+]
