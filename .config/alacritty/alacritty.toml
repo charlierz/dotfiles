@@ -6,7 +6,7 @@ size = 16
 # program = "ubuntu"
 
 [window]
-opacity = 0.92
+#opacity = 0.92
 #padding = { y = 0 }
 dynamic_padding = true
 
