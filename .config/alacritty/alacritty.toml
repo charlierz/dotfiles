@@ -1,5 +1,5 @@
 [font]
-normal = { family = "JetBrainsMono NF", style = "Regular" }
+normal = { family = "JetBrainsMono Nerd Font", style = "ExtraLight" }
 size = 16
 
 # [shell]
@@ -9,6 +9,7 @@ size = 16
 #opacity = 0.92
 #padding = { y = 0 }
 dynamic_padding = true
+option_as_alt = "Both"
 
 # TokyoNight Colors
 

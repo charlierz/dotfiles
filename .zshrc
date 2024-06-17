@@ -114,6 +114,9 @@ if [ "$(uname -s)" = "Darwin" ]; then
     *) export PATH="$PNPM_HOME:$PATH" ;;
   esac
   # pnpm end
+  
+  # lazygit config location
+  export XDG_CONFIG_HOME="$HOME/.config"
 
   alias pj='npx projen'
 
