@@ -144,6 +144,9 @@ elif [ "$(uname -s)" = "Linux" ]; then
 
   # brew
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+  # qmk
+  export PATH="$HOME/.local/bin:$PATH"
 fi
 
 export NVM_DIR="$HOME/.nvm"
