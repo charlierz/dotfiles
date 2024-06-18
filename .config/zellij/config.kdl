@@ -3,6 +3,7 @@ keybinds {
     normal {
         // uncomment this and adjust key if using copy_on_select=false
         // bind "Alt c" { Copy; }
+        bind "Ctrl d" { Detach; }
     }
     locked {
         bind "Ctrl g" { SwitchToMode "Normal"; }
@@ -307,7 +308,7 @@ default_mode "locked"
 //   - true (default)
 //   - false
 //
-// mouse_mode false
+mouse_mode false
 
 // Configure the scroll back buffer size
 // This is the number of lines zellij stores for each pane in the scroll back
@@ -344,7 +345,7 @@ default_mode "locked"
 // Path to the default editor to use to edit pane scrollbuffer
 // Default: $EDITOR or $VISUAL
 //
-scrollback_editor "/usr/bin/hx"
+// scrollback_editor "/usr/bin/hx"
 
 // When attaching to an existing session with other users,
 // should the session be mirrored (true)
