@@ -2,8 +2,10 @@ theme = "tokyonight_charlie"
 
 [editor]
 true-color = true
-rulers = [120]
 color-modes = true
+scrolloff = 10
+bufferline = "always"
+# rulers = [100]
 
 [keys.normal]
 esc = ["collapse_selection", "keep_primary_selection"]
@@ -21,9 +23,7 @@ hidden = false
 
 [editor.statusline]
 left = ["mode", "spacer", "version-control", "file-name", "read-only-indicator"]
-center = []
 right = ["spinner", "diagnostics", "register", "selections", "position", "total-line-numbers", "file-encoding", "file-type"]
-separator = "│"
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
