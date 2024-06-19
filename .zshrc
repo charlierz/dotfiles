@@ -182,7 +182,7 @@ eval "$(zoxide init zsh)"
 bindkey '^[[Z' autosuggest-accept # tab
 
 # aliases
-alias lg="lazygit"
+alias g="lazygit"
 alias y="yazi"
-alias zj="zellij"
-
+alias j="zellij"
+alias h="hx"

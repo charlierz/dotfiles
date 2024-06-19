@@ -11,6 +11,12 @@ keybinds {
         bind "Ctrl h" { MoveFocusOrTab "Left"; }
         bind "Ctrl l" { MoveFocusOrTab "Right"; }
         bind "Ctrl p" { ToggleFloatingPanes; }
+        bind "Ctrl y" {
+            LaunchOrFocusPlugin "session-manager" {
+                floating true
+                move_to_focused_tab true
+            };
+        }
     }
     resize {
         bind "Ctrl n" { SwitchToMode "Normal"; }
