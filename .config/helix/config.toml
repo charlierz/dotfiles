@@ -13,6 +13,10 @@ C-k = ":buffer-previous"
 C-j = ":buffer-next"
 C-q = ":buffer-close"
 
+[keys.normal.space]
+f = "file_picker_in_current_directory"
+F = "file_picker"
+
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"

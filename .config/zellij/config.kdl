@@ -8,7 +8,6 @@ keybinds {
     locked {
         bind "Ctrl g" { SwitchToMode "Normal"; }
         bind "Ctrl t" { NewTab; }
-        bind "Ctrl x" { CloseTab; }
         bind "Ctrl h" { MoveFocusOrTab "Left"; }
         bind "Ctrl l" { MoveFocusOrTab "Right"; }
         bind "Ctrl p" { ToggleFloatingPanes; }
