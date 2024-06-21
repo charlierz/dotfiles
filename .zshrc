@@ -183,6 +183,6 @@ bindkey '^[[Z' autosuggest-accept # tab
 
 # aliases
 alias g="lazygit"
-alias y="yazi"
+alias e="yazi"
 alias j="zellij"
 alias h="hx"
