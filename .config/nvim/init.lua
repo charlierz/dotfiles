@@ -928,9 +928,9 @@ require('lazy').setup({
       ui = {
         border = 'rounded',
         height = 0.84,
-        width = 0.84,
+        width = 0.85,
         x = 0.43,
-        y = 0.43,
+        y = 0.42,
       },
     },
     keys = {
