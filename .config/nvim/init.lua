@@ -382,6 +382,7 @@ require('lazy').setup({
               'f',
               '--color=never',
               '--hidden',
+              '--no-ignore',
               '--follow',
               '-E',
               '.git/*',
