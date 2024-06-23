@@ -187,3 +187,5 @@ alias g="lazygit"
 alias e="yazi"
 alias j="zellij"
 alias h="hx"
+alias v="nvim"
+

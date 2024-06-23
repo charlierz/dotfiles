@@ -3,21 +3,12 @@ keybinds {
     normal {
         // uncomment this and adjust key if using copy_on_select=false
         // bind "Alt c" { Copy; }
-        unbind "Ctrl g"
         bind "Ctrl d" { Detach; }
     }
     locked {
-        unbind "Ctrl g"
-        bind "Ctrl y" { SwitchToMode "Normal"; }
         bind "Ctrl t" { NewTab; }
         bind "Ctrl h" { MoveFocusOrTab "Left"; }
         bind "Ctrl l" { MoveFocusOrTab "Right"; }
-        bind "Ctrl p" {
-            LaunchOrFocusPlugin "session-manager" {
-                floating true
-                move_to_focused_tab true
-            };
-        }
     }
     resize {
         bind "Ctrl n" { SwitchToMode "Normal"; }
@@ -157,7 +148,7 @@ keybinds {
         bind "x" { CloseFocus; SwitchToMode "Normal"; }
     }
     shared_except "locked" {
-        bind "Ctrl y" { SwitchToMode "Locked"; }
+        bind "Ctrl g" { SwitchToMode "Locked"; }
         bind "Ctrl q" { Quit; }
         bind "Alt n" { NewPane; }
         bind "Alt i" { MoveTab "Left"; }
@@ -276,18 +267,18 @@ pane_frames false
 // 40 42 54
 
 themes {
-    tokyonight {
-        fg 169 177 214
-        bg 26 27 38
-        black 22 22 30
-        red 249 51 87
-        green 158 206 106
-        yellow 224 175 104
-        blue 122 162 247
-        magenta 187 154 247
-        cyan 42 195 222
-        white 192 202 245
-        orange 255 158 100
+    tokyonight_night {
+        fg "#c0caf5"
+        bg "#292e42"
+        black "#15161e"
+        red "#f7768e"
+        green "#9ece6a"
+        yellow "#e0af68"
+        blue "#7aa2f7"
+        magenta "#bb9af7"
+        cyan "#7dcfff"
+        white "#a9b1d6"
+        orange "#ff9e64"
     }
     
 }
@@ -295,7 +286,7 @@ themes {
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "tokyonight"
+theme "tokyonight_night"
 
 // The name of the default layout to load on startup
 // Default: "default"
