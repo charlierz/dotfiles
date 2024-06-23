@@ -827,6 +827,9 @@ require('lazy').setup({
           hl.TelescopePromptBorder = {
             fg = '#ff9e64',
           }
+          hl.TelescopePromptTitle = {
+            fg = '#ff9e64',
+          }
         end,
       }
     end,
