@@ -200,18 +200,18 @@ vim.keymap.set('n', '<A-v>', '<C-w><C-v>', { desc = 'Split window vertically' })
 vim.keymap.set('n', '<C-j>', ':bnext<CR>', { desc = 'Focus next buffer', noremap = true, silent = true })
 vim.keymap.set('n', '<C-k>', ':bprevious<CR>', { desc = 'Focus previous buffer', noremap = true, silent = true })
 vim.keymap.set('n', '<C-q>', ':bd<CR>', { desc = 'Close buffer', noremap = true, silent = true })
-vim.keymap.set(
-  'n',
-  '<leader>g',
-  ':silent !zellij run -fc -x 6\\% -y 6\\% --width 88\\% --height 88\\% -- lazygit<CR>',
-  { desc = 'Lazy[G]it', noremap = true, silent = true }
-)
-vim.keymap.set(
-  'n',
-  '<leader>e',
-  ':silent !zellij run -f -x 6\\% -y 6\\% --width 88\\% --height 88\\% -- bash ~/.config/yazi-picker.sh <CR>',
-  { desc = 'File [E]xplorer', noremap = true, silent = true }
-)
+-- vim.keymap.set(
+--   'n',
+--   '<leader>g',
+--   ':silent !zellij run -fc -x 6\\% -y 6\\% --width 88\\% --height 88\\% -- lazygit<CR>',
+--   { desc = 'Lazy[G]it', noremap = true, silent = true }
+-- )
+-- vim.keymap.set(
+--   'n',
+--   '<leader>e',
+--   ':silent !zellij run -f -x 6\\% -y 6\\% --width 88\\% --height 88\\% -- bash ~/.config/yazi-picker.sh <CR>',
+--   { desc = 'File [E]xplorer', noremap = true, silent = true }
+-- )
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -985,6 +985,53 @@ require('lazy').setup({
           lualine_y = {},
         },
       }
+    end,
+  },
+
+  {
+    'rolv-apneseth/tfm.nvim',
+    lazy = false,
+    opts = {
+      replace_netrw = true,
+      ui = {
+        border = 'rounded',
+        height = 0.84,
+        width = 0.85,
+        x = 0.43,
+        y = 0.42,
+      },
+    },
+    keys = {
+      {
+        '<leader>e',
+        function()
+          require('tfm').open()
+        end,
+        desc = 'Open file manager',
+      },
+    },
+  },
+
+  {
+    'kdheepak/lazygit.nvim',
+    cmd = {
+      'LazyGit',
+      'LazyGitConfig',
+      'LazyGitCurrentFile',
+      'LazyGitFilter',
+      'LazyGitFilterCurrentFile',
+    },
+    -- optional for floating window border decoration
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
+    -- setting the keybinding for LazyGit with 'keys' is recommended in
+    -- order to load the plugin when the command is run for the first time
+    keys = {
+      { '<leader>g', '<cmd>LazyGit<cr>', desc = 'LazyGit' },
+    },
+    config = function()
+      vim.g.lazygit_floating_window_scaling_factor = 0.85
     end,
   },
 
