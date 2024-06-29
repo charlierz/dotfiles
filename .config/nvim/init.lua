@@ -227,6 +227,15 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- Start telescope if no buffer is opened
+vim.api.nvim_create_autocmd('VimEnter', {
+  callback = function()
+    if vim.fn.argv(0) == '' then
+      require('telescope.builtin').find_files()
+    end
+  end,
+})
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -394,14 +403,7 @@ require('lazy').setup({
               'f',
               '--color=never',
               '--hidden',
-              '--no-ignore',
               '--follow',
-              '-E',
-              '.git/*',
-              '-E',
-              'node_modules/*',
-              '-E',
-              '.next/*',
             },
           },
         },
@@ -704,6 +706,8 @@ require('lazy').setup({
         -- You can use a sub-list to tell conform to run *until* a formatter
         -- is found.
         javascript = { { 'prettierd', 'prettier' } },
+        typescript = { { 'prettierd', 'prettier' } },
+        json = { { 'prettierd', 'prettier' } },
       },
     },
   },
