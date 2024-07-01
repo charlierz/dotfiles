@@ -147,6 +147,9 @@ elif [ "$(uname -s)" = "Linux" ]; then
 
   # qmk
   export PATH="$HOME/.local/bin:$PATH"
+
+  # cargo
+  export PATH="$HOME/.cargo/bin:$PATH"
 fi
 
 export NVM_DIR="$HOME/.nvm"

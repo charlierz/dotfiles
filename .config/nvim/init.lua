@@ -169,7 +169,7 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
-vim.keymap.set('n', '<leader>m', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
+vim.keymap.set('n', '<leader>m', vim.diagnostic.open_float, { desc = 'Show diagnostic error [M]essages' })
 vim.keymap.set('n', '<leader>l', vim.diagnostic.setloclist, { desc = 'Open diagnostic quickfix [L]ist' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
@@ -228,13 +228,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- Start telescope if no buffer is opened
-vim.api.nvim_create_autocmd('VimEnter', {
-  callback = function()
-    if vim.fn.argv(0) == '' then
-      require('telescope.builtin').find_files()
-    end
-  end,
-})
+-- vim.api.nvim_create_autocmd('VimEnter', {
+--   callback = function()
+--     if vim.fn.argv(0) == '' then
+--       require('telescope.builtin').find_files()
+--     end
+--   end,
+-- })
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
@@ -404,6 +404,12 @@ require('lazy').setup({
               '--color=never',
               '--hidden',
               '--follow',
+              '-E',
+              '.git/*',
+              '-E',
+              '*templ.go',
+              '-E',
+              '.gen/*',
             },
           },
         },
@@ -615,6 +621,13 @@ require('lazy').setup({
       local servers = {
         -- clangd = {},
         gopls = {},
+        templ = {},
+        svelte = {},
+        html = {},
+        htmx = {},
+        tailwindcss = {
+          init_options = { userLanguages = { templ = 'html' } },
+        },
         -- pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -655,6 +668,7 @@ require('lazy').setup({
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
+        'prettier',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -708,6 +722,7 @@ require('lazy').setup({
         javascript = { { 'prettierd', 'prettier' } },
         typescript = { { 'prettierd', 'prettier' } },
         json = { { 'prettierd', 'prettier' } },
+        templ = { 'templ' },
       },
     },
   },
@@ -912,7 +927,7 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'go', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc' },
+      ensure_installed = { 'bash', 'c', 'diff', 'go', 'html', 'lua', 'luadoc', 'markdown', 'templ', 'vim', 'vimdoc' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
