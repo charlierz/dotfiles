@@ -110,6 +110,16 @@ if [ "$(uname -s)" = "Darwin" ]; then
   export PATH="$PATH:$HOME/Development/flutter/bin"
   export PATH="$PATH":"$HOME/.pub-cache/bin"
 
+  # genesis
+  export PATH="$PATH:$HOME/bin/aws-accounts"
+  export PATH="$PATH:$HOME/bin/robq-tools"
+  # local path to affinidi-service-ts, required by pj-local scripts
+  export AFFINIDI_SERVICE_TS=/.../affinidi-service-ts
+  # local path to Genesis libs (aws-cdk, commons, affinidi-starter-ts) folder, required by all-local.sh script
+  export GENESIS_LIBS=/.../libs
+
+  export AWS_PROFILE=affinidi-elements-dev-dev-portal-bff:Developer
+
   # pnpm
   export PNPM_HOME="/Users/carlos/Library/pnpm"
   case ":$PATH:" in
@@ -148,9 +158,10 @@ elif [ "$(uname -s)" = "Linux" ]; then
   # qmk
   export PATH="$HOME/.local/bin:$PATH"
 
-  # cargo
-  export PATH="$HOME/.cargo/bin:$PATH"
 fi
+
+# cargo
+export PATH="$HOME/.cargo/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
