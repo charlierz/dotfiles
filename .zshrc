@@ -132,6 +132,8 @@ if [ "$(uname -s)" = "Darwin" ]; then
   export XDG_CONFIG_HOME="$HOME/.config"
 
   alias pj='npx projen'
+  alias bd='./bin/dev.js'
+  alias br='./bin/run.js'
 
 elif [ "$(uname -s)" = "Linux" ]; then
   export GOROOT=/usr/local/go

@@ -150,6 +150,8 @@ keybinds {
     shared_except "locked" {
         bind "Ctrl g" { SwitchToMode "Locked"; }
         bind "Ctrl q" { Quit; }
+        bind "Ctrl x" { CloseTab; SwitchToMode "Locked"; }
+        bind "Ctrl r" { SwitchToMode "RenameTab"; TabNameInput 0; }
         bind "Alt n" { NewPane; }
         bind "Alt i" { MoveTab "Left"; }
         bind "Alt o" { MoveTab "Right"; }
