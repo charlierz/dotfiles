@@ -136,30 +136,36 @@ if [ "$(uname -s)" = "Darwin" ]; then
   alias br='./bin/run.js'
 
 elif [ "$(uname -s)" = "Linux" ]; then
-  export GOROOT=/usr/local/go
-  export GOPATH=$HOME/go
-  export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+  if [[ -n "$TERMUX_VERSION" ]]; then
+    export GOROOT=$PREFIX/lib/go
+    export GOPATH=~/www/go
+    export GOBIN=$GOPATH/bin
+    export PATH=$GOBIN:$GOPATH/bin:$GOROOT/bin:$PATH
+  else
+    export GOROOT=/usr/local/go
+    export GOPATH=$HOME/go
+    export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
-  # pnpm
-  export PNPM_HOME="/home/charlierz/.local/share/pnpm"
-  case ":$PATH:" in
-    *":$PNPM_HOME:"*) ;;
-    *) export PATH="$PNPM_HOME:$PATH" ;;
-  esac
-  # pnpm end
+    # pnpm
+    export PNPM_HOME="/home/charlierz/.local/share/pnpm"
+    case ":$PATH:" in
+      *":$PNPM_HOME:"*) ;;
+      *) export PATH="$PNPM_HOME:$PATH" ;;
+    esac
+    # pnpm end
 
-  # Turso
-  export PATH="/home/charlierz/.turso:$PATH"
+    # Turso
+    export PATH="/home/charlierz/.turso:$PATH"
 
-  # neovim
-  export PATH="$PATH:/opt/nvim-linux64/bin"
+    # neovim
+    export PATH="$PATH:/opt/nvim-linux64/bin"
 
-  # brew
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    # brew
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-  # qmk
-  export PATH="$HOME/.local/bin:$PATH"
-
+    # qmk
+    export PATH="$HOME/.local/bin:$PATH"
+  fi
 fi
 
 # cargo
