@@ -206,8 +206,8 @@ vim.keymap.set('n', '<A-k>', '<C-w><C-k>', { desc = 'Focus upper window' })
 vim.keymap.set('n', '<A-q>', '<C-w><C-q>', { desc = 'Close window' })
 vim.keymap.set('n', '<A-s>', '<C-w><C-s>', { desc = 'Split window' })
 vim.keymap.set('n', '<A-v>', '<C-w><C-v>', { desc = 'Split window vertically' })
-vim.keymap.set('n', '<C-k>', ':bnext<CR>', { desc = 'Focus next buffer', noremap = true, silent = true })
-vim.keymap.set('n', '<C-j>', ':bprevious<CR>', { desc = 'Focus previous buffer', noremap = true, silent = true })
+vim.keymap.set('n', '<C-j>', ':bnext<CR>', { desc = 'Focus next buffer', noremap = true, silent = true })
+vim.keymap.set('n', '<C-k>', ':bprevious<CR>', { desc = 'Focus previous buffer', noremap = true, silent = true })
 vim.keymap.set('n', '<C-q>', ':bd<CR>', { desc = 'Close buffer', noremap = true, silent = true })
 vim.keymap.set(
   'n',
