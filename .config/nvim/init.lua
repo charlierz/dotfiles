@@ -402,6 +402,9 @@ require('lazy').setup({
               ['<esc>'] = actions.close,
             },
           },
+          layout_config = {
+            horizontal = { width = 0.88, height = 0.92 },
+          },
         },
         pickers = {
           find_files = {
