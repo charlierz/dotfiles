@@ -210,3 +210,11 @@ alias j="zellij"
 alias h="hx"
 alias v="nvim"
 
+
+# pnpm
+export PNPM_HOME="/home/charlierz/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
