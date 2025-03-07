@@ -1,89 +1,3 @@
---[[
-
-=====================================================================
-==================== READ THIS BEFORE CONTINUING ====================
-=====================================================================
-========                                    .-----.          ========
-========         .----------------------.   | === |          ========
-========         |.-""""""""""""""""""-.|   |-----|          ========
-========         ||                    ||   | === |          ========
-========         ||   KICKSTART.NVIM   ||   |-----|          ========
-========         ||                    ||   | === |          ========
-========         ||                    ||   |-----|          ========
-========         ||:Tutor              ||   |:::::|          ========
-========         |'-..................-'|   |____o|          ========
-========         `"")----------------(""`   ___________      ========
-========        /::::::::::|  |::::::::::\  \ no mouse \     ========
-========       /:::========|  |==hjkl==:::\  \ required \    ========
-========      '""""""""""""'  '""""""""""""'  '""""""""""'   ========
-========                                                     ========
-=====================================================================
-=====================================================================
-
-What is Kickstart?
-
-  Kickstart.nvim is *not* a distribution.
-
-  Kickstart.nvim is a starting point for your own configuration.
-    The goal is that you can read every line of code, top-to-bottom, understand
-    what your configuration is doing, and modify it to suit your needs.
-
-    Once you've done that, you can start exploring, configuring and tinkering to
-    make Neovim your own! That might mean leaving Kickstart just the way it is for a while
-    or immediately breaking it into modular pieces. It's up to you!
-
-    If you don't know anything about Lua, I recommend taking some time to read through
-    a guide. One possible example which will only take 10-15 minutes:
-      - https://learnxinyminutes.com/docs/lua/
-
-    After understanding a bit more about Lua, you can use `:help lua-guide` as a
-    reference for how Neovim integrates Lua.
-    - :help lua-guide
-    - (or HTML version): https://neovim.io/doc/user/lua-guide.html
-
-Kickstart Guide:
-
-  TODO: The very first thing you should do is to run the command `:Tutor` in Neovim.
-
-    If you don't know what this means, type the following:
-      - <escape key>
-      - :
-      - Tutor
-      - <enter key>
-
-    (If you already know the Neovim basics, you can skip this step.)
-
-  Once you've completed that, you can continue working through **AND READING** the rest
-  of the kickstart init.lua.
-
-  Next, run AND READ `:help`.
-    This will open up a help window with some basic information
-    about reading, navigating and searching the builtin help documentation.
-
-    This should be the first place you go to look when you're stuck or confused
-    with something. It's one of my favorite Neovim features.
-
-    MOST IMPORTANTLY, we provide a keymap "<space>sh" to [s]earch the [h]elp documentation,
-    which is very useful when you're not exactly sure of what you're looking for.
-
-  I have left several `:help X` comments throughout the init.lua
-    These are hints about where to find more information about the relevant settings,
-    plugins or Neovim features used in Kickstart.
-
-   NOTE: Look for lines like this
-
-    Throughout the file. These are for you, the reader, to help you understand what is happening.
-    Feel free to delete them once you know what you're doing, but they should serve as a guide
-    for when you are first encountering a few different constructs in your Neovim config.
-
-If you experience any errors while trying to install kickstart, run `:checkhealth` for more info.
-
-I hope you enjoy your Neovim journey,
-- TJ
-
-P.S. You can delete this when you're done too. It's your config now! :)
---]]
-
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
@@ -106,7 +20,19 @@ vim.g.have_nerd_font = true
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.opt.relativenumber = true
+vim.api.nvim_create_augroup('RelativeNumbers', { clear = true })
+vim.api.nvim_create_autocmd('InsertEnter', {
+  group = 'RelativeNumbers',
+  callback = function()
+    vim.opt.relativenumber = false
+  end,
+})
+vim.api.nvim_create_autocmd('InsertLeave', {
+  group = 'RelativeNumbers',
+  callback = function()
+    vim.opt.relativenumber = true
+  end,
+})
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -150,7 +76,7 @@ vim.opt.splitbelow = true
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 vim.opt.list = true
-vim.opt.listchars = { tab = '  ', trail = ' ', nbsp = '␣' }
+vim.opt.listchars = { tab = '» ', trail = '.', nbsp = '␣' }
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
@@ -203,12 +129,12 @@ vim.keymap.set('n', '<A-h>', '<C-w><C-h>', { desc = 'Focus left window' })
 vim.keymap.set('n', '<A-l>', '<C-w><C-l>', { desc = 'Focus right window' })
 vim.keymap.set('n', '<A-j>', '<C-w><C-j>', { desc = 'Focus lower window' })
 vim.keymap.set('n', '<A-k>', '<C-w><C-k>', { desc = 'Focus upper window' })
-vim.keymap.set('n', '<A-q>', '<C-w><C-q>', { desc = 'Close window' })
-vim.keymap.set('n', '<A-s>', '<C-w><C-s>', { desc = 'Split window' })
-vim.keymap.set('n', '<A-v>', '<C-w><C-v>', { desc = 'Split window vertically' })
+vim.keymap.set('n', '<A-w>', '<C-w><C-q>', { desc = 'Close window' })
+-- vim.keymap.set('n', '<A-s>', '<C-w><C-s>', { desc = 'Split window' })
+-- vim.keymap.set('n', '<A-v>', '<C-w><C-v>', { desc = 'Split window vertically' })
 vim.keymap.set('n', '<C-j>', ':bnext<CR>', { desc = 'Focus next buffer', noremap = true, silent = true })
 vim.keymap.set('n', '<C-k>', ':bprevious<CR>', { desc = 'Focus previous buffer', noremap = true, silent = true })
-vim.keymap.set('n', '<C-q>', ':bd<CR>', { desc = 'Close buffer', noremap = true, silent = true })
+vim.keymap.set('n', '<C-w>', ':bd<CR>', { nowait = true, desc = 'Close buffer', noremap = true, silent = true })
 vim.keymap.set(
   'n',
   '<leader>g',
@@ -217,7 +143,7 @@ vim.keymap.set(
 )
 vim.keymap.set(
   'n',
-  '<leader>e',
+  '<C-e>',
   ':silent !zellij run -f -x 6\\% -y 6\\% --width 88\\% --height 88\\% -- bash ~/.config/yazi-picker.sh <CR>',
   { desc = 'File [E]xplorer', noremap = true, silent = true }
 )
@@ -663,7 +589,7 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        tsserver = {},
+        ts_ls = {},
         --
 
         lua_ls = {
@@ -964,7 +890,7 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'go', 'html', 'lua', 'luadoc', 'markdown', 'templ', 'vim', 'vimdoc' },
+      ensure_installed = { 'bash', 'c', 'diff', 'go', 'html', 'lua', 'luadoc', 'markdown', 'templ', 'vim', 'vimdoc', 'typescript' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
@@ -1109,7 +1035,7 @@ require('lazy').setup({
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
   -- require 'kickstart.plugins.debug',
-  -- require 'kickstart.plugins.indent_line',
+  require 'kickstart.plugins.indent_line',
   require 'kickstart.plugins.lint',
   require 'kickstart.plugins.autopairs',
 

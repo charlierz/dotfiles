@@ -4,11 +4,19 @@ keybinds {
         // uncomment this and adjust key if using copy_on_select=false
         // bind "Alt c" { Copy; }
         bind "Ctrl d" { Detach; }
+        bind "Ctrl w" { CloseTab; }
     }
     locked {
         bind "Ctrl t" { NewTab; }
         bind "Ctrl h" { MoveFocusOrTab "Left"; }
         bind "Ctrl l" { MoveFocusOrTab "Right"; }
+        // bind "Alt h" { MoveFocusOrTab "Left"; }
+        // bind "Alt l" { MoveFocusOrTab "Right"; }
+        // bind "Alt s" { GoToTab 1; }
+        // bind "Alt d" { GoToTab 2; }
+        // bind "Alt f" { GoToTab 3; }
+        // bind "Alt j" { GoToTab 4; }
+        // bind "Alt k" { GoToTab 5; }
     }
     resize {
         bind "Ctrl n" { SwitchToMode "Normal"; }
@@ -38,7 +46,7 @@ keybinds {
         bind "z" { TogglePaneFrames; SwitchToMode "Normal"; }
         bind "w" { ToggleFloatingPanes; SwitchToMode "Normal"; }
         bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "Normal"; }
-        bind "c" { SwitchToMode "RenamePane"; PaneNameInput 0;}
+        bind "c" { SwitchToMode "RenamePane"; PaneNameInput 0; }
     }
     move {
         bind "Ctrl h" { SwitchToMode "Normal"; }
