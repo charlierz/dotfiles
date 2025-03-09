@@ -34,6 +34,7 @@ return {
       --  into multiple repos for maintenance purposes.
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
+      'hrsh7th/cmp-nvim-lsp-signature-help',
     },
     config = function()
       -- See `:help cmp`
@@ -86,8 +87,8 @@ return {
           --    $body
           --  end
           --
-          -- <c-k> will move you to the right of each of the expansion locations.
-          -- <c-j> is similar, except moving you backwards.
+          -- <c-j> will move you to the right of each of the expansion locations.
+          -- <c-k> is similar, except moving you backwards.
           ['<C-j>'] = cmp.mapping(function()
             if luasnip.expand_or_locally_jumpable() then
               luasnip.expand_or_jump()
@@ -111,6 +112,7 @@ return {
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
+          { name = 'nvim_lsp_signature_help' },
         },
       }
     end,

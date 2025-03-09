@@ -4,7 +4,7 @@ return {
     dependencies = { 'MunifTanjim/nui.nvim' },
     opts = {
       max_count = 5,
-      disabl_mouse = false,
+      disable_mouse = false,
     },
   },
 }
