@@ -68,11 +68,12 @@ return {
           --  This will auto-import if your LSP supports it.
           --  This will expand snippets if the LSP sent a snippet.
           ['<C-y>'] = cmp.mapping.confirm { select = true },
+          ['<A-y>'] = require('minuet').make_cmp_map(),
 
           -- If you prefer more traditional completion keymaps,
           -- you can uncomment the following lines
           -- ['<C-CR>'] = cmp.mapping.confirm { select = true },
-          ['<Tab>'] = cmp.mapping.confirm { select = true },
+          -- ['<Tab>'] = cmp.mapping.confirm { select = true },
           -- ['<Tab>'] = cmp.mapping.select_next_item(),
           -- ['<S-Tab>'] = cmp.mapping.select_prev_item(),
 
@@ -104,15 +105,31 @@ return {
           --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
         },
         sources = {
+          { name = 'minuet', priority = 1000 },
+          { name = 'nvim_lsp_signature_help', priority = 750 },
+          { name = 'luasnip', priority = 500 },
+          { name = 'nvim_lsp', priority = 250 },
+          { name = 'path', priority = 100 },
           {
             name = 'lazydev',
             -- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
             group_index = 0,
+            priority = 100,
           },
-          { name = 'nvim_lsp' },
-          { name = 'luasnip' },
-          { name = 'path' },
-          { name = 'nvim_lsp_signature_help' },
+        },
+        -- performance = {
+        --   fetching_timeout = 2000,
+        -- },
+        sorting = {
+          priority_weight = 1.0,
+          comparators = {
+            cmp.config.compare.offset,
+            cmp.config.compare.exact,
+            cmp.config.compare.score,
+            cmp.config.compare.recently_used,
+            cmp.config.compare.locality,
+            cmp.config.compare.order,
+          },
         },
       }
     end,

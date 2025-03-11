@@ -76,6 +76,7 @@ return {
         typescriptreact = { 'prettierd' },
         json = { 'prettierd' },
         templ = { 'templ' },
+        svelte = { 'prettierd' },
       },
     },
   },
