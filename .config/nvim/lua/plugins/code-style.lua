@@ -77,6 +77,7 @@ return {
         json = { 'prettierd' },
         templ = { 'templ' },
         svelte = { 'prettierd' },
+        dart = { 'dart_format' },
       },
     },
   },
