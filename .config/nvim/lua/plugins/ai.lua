@@ -27,7 +27,7 @@ return {
       context_window = 16000,
       provider_options = {
         openai_fim_compatible = {
-          name = 'Ollama',
+          name = 'AI',
           api_key = 'TERM',
           end_point = 'http://192.168.0.166:11434/v1/completions',
           model = 'qwen2.5-coder:3b-base-q4_K_M',
