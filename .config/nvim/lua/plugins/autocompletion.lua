@@ -67,8 +67,8 @@ return {
           -- Accept ([y]es) the completion.
           --  This will auto-import if your LSP supports it.
           --  This will expand snippets if the LSP sent a snippet.
-          ['<C-y>'] = cmp.mapping.confirm { select = true },
-          ['<A-y>'] = require('minuet').make_cmp_map(),
+          ['<C-Enter>'] = cmp.mapping.confirm { select = true },
+          ['<C-y>'] = require('minuet').make_cmp_map(),
 
           -- If you prefer more traditional completion keymaps,
           -- you can uncomment the following lines
@@ -105,7 +105,6 @@ return {
           --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
         },
         sources = {
-          { name = 'minuet', priority = 1000 },
           { name = 'nvim_lsp_signature_help', priority = 750 },
           { name = 'luasnip', priority = 500 },
           { name = 'nvim_lsp', priority = 250 },
@@ -116,6 +115,7 @@ return {
             group_index = 0,
             priority = 100,
           },
+          { name = 'minuet', priority = 1000 },
         },
         -- performance = {
         --   fetching_timeout = 2000,
