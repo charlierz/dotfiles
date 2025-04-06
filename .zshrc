@@ -5,6 +5,8 @@ export EDITOR=nvim
 export VISUAL="$EDITOR"
 
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
+
+zstyle ':omz:update' mode disabled
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
