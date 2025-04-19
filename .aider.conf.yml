@@ -1,0 +1,20 @@
+api-key:
+
+set-env: OLLAMA_API_BASE=http://192.168.0.166:11434
+
+auto-commits: false
+show-model-warnings: false
+watch-files: true
+dark-mode: true
+
+alias:
+  - "gemini:openrouter/google/gemini-2.5-pro-preview-03-25"
+  - "gemini-free:openrouter/google/gemini-2.5-pro-exp-03-25:free"
+  - "sonnet:openrouter/anthropic/claude-3.7-sonnet"
+  - "v3:openrouter/deepseek/deepseek-chat-v3-0324"
+
+model: gemini-free
+edit-format: architect
+editor-model: sonnet
+editor-edit-format: diff
+
