@@ -6,15 +6,18 @@ auto-commits: false
 show-model-warnings: false
 watch-files: true
 dark-mode: true
+completion-menu-bg-color: "#1a1b26"
 
 alias:
   - "gemini:openrouter/google/gemini-2.5-pro-preview-03-25"
-  - "gemini-free:openrouter/google/gemini-2.5-pro-exp-03-25:free"
+  - "gemini-free:openrouter/google/gemini-2.5-pro-exp-03-25"
   - "sonnet:openrouter/anthropic/claude-3.7-sonnet"
   - "v3:openrouter/deepseek/deepseek-chat-v3-0324"
+  - "gpt-41:openrouter/openai/gpt-4.1"
 
 model: gemini-free
-edit-format: architect
-editor-model: sonnet
-editor-edit-format: diff
+edit-format: udiff-simple
+# edit-format: architect
+# editor-model: sonnet
+# editor-edit-format: diff
 

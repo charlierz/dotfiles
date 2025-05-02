@@ -211,13 +211,9 @@ return {
       local servers = {
         -- clangd = {},
         gopls = {},
-        templ = {},
         svelte = {},
         html = {},
-        htmx = {},
-        tailwindcss = {
-          init_options = { userLanguages = { templ = 'html' } },
-        },
+        tailwindcss = {},
         cssls = {},
         -- pyright = {},
         -- rust_analyzer = {},

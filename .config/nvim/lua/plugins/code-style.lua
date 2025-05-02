@@ -75,7 +75,6 @@ return {
         typescript = { 'prettierd' },
         typescriptreact = { 'prettierd' },
         json = { 'prettierd' },
-        templ = { 'templ' },
         svelte = { 'prettierd' },
         dart = { 'dart_format' },
       },

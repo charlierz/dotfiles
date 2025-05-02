@@ -85,8 +85,6 @@ return { -- Fuzzy Finder (files, lsp, etc)
             '-E',
             '.git/*',
             '-E',
-            '*templ.go',
-            '-E',
             '.gen/*',
           },
         },
