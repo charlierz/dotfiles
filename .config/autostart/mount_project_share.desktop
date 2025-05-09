@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Mount Project
+Exec=gio mount smb://nas-charlie.local/project
+Terminal=false
+Type=Application
+X-GNOME-Autostart-enabled=true

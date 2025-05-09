@@ -68,7 +68,7 @@ return {
           --  This will auto-import if your LSP supports it.
           --  This will expand snippets if the LSP sent a snippet.
           ['<C-y>'] = cmp.mapping.confirm { select = true },
-          ['<A-y>'] = require('minuet').make_cmp_map(),
+          -- ['<A-y>'] = require('minuet').make_cmp_map(),
 
           -- If you prefer more traditional completion keymaps,
           -- you can uncomment the following lines
@@ -115,7 +115,7 @@ return {
             group_index = 0,
             priority = 100,
           },
-          { name = 'minuet', priority = 1000 },
+          -- { name = 'minuet', priority = 1000 },
         },
         -- performance = {
         --   fetching_timeout = 2000,

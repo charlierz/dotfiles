@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Mount Private
+Exec=gio mount smb://nas-charlie.local/private
+Terminal=false
+Type=Application
+X-GNOME-Autostart-enabled=true
