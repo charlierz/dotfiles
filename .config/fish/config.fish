@@ -1,6 +1,7 @@
 if status is-interactive
     fish_config theme choose "Dracula"
     fish_vi_key_bindings
+    eval (zellij setup --generate-auto-start fish | string collect)
 end
 
 set -g fish_greeting
