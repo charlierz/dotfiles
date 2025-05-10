@@ -1,0 +1,16 @@
+/* Pinned tabs spacing and transparent background */
+#vertical-pinned-tabs-container {
+  max-height: none !important;
+  & .tab-background {
+    .tabbrowser-tab:not(:hover)
+      > .tab-stack
+      > &:not([selected], [multiselected]) {
+      background-color: transparent !important;
+    }
+  }
+}
+
+#tabbrowser-tabbox {
+  outline: none !important;
+  box-shadow: none !important;
+}
