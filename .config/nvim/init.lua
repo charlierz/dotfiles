@@ -114,7 +114,7 @@ vim.keymap.set('n', '<leader>p', '<Plug>MarkdownPreviewToggle', { desc = 'Markdo
 vim.keymap.set(
   'n',
   '<leader>g',
-  ':silent !zellij run -fc -x 6\\% -y 6\\% --width 88\\% --height 88\\% -- lazygit<CR>',
+  ':silent !zellij run -fc -x 6\\% -y 6\\% --width 88\\% --height 88\\% -- env XDG_CONFIG_HOME=$HOME/.config lazygit<CR>',
   { desc = 'Lazy[G]it', noremap = true, silent = true }
 )
 vim.keymap.set(
