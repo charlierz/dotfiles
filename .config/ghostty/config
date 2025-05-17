@@ -2,5 +2,5 @@ command = /usr/bin/fish
 
 theme = tokyonight_moon
 background = #1b1f2f
-font-family = JetBrainsMono Nerd Font Mono
+font-family = JetBrainsMonoNL NFM
 background-opacity = 0.98
