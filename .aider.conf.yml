@@ -8,3 +8,6 @@ map-tokens: 4096
 model: gemini
 edit-format: diff-fenced
 
+alias:
+  - "or-gemini:openrouter/google/gemini-2.5-pro"
+  - "or-flash:openrouter/google/gemini-2.5-flash"
