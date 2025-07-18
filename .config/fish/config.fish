@@ -36,6 +36,5 @@ zoxide init fish | source
 
 alias g="lazygit"
 alias e="yazi"
-alias j="zellij"
 alias v="nvim"
 
