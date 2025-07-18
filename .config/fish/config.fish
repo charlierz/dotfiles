@@ -10,6 +10,7 @@ else if test (uname -s) = "Darwin"
     fish_add_path "$HOME/bin/aws-accounts"
     fish_add_path "$HOME/bin/robq-tools"
     fish_add_path "$HOME/.local/bin" # For aider
+    fish_add_path "$HOME/Library/Application Support/fnm"
     fish_add_path /opt/homebrew/bin
     set -gx AFFINIDI_SERVICE_TS /.../affinidi-service-ts
     set -gx GENESIS_LIBS /.../libs
