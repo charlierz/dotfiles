@@ -72,6 +72,7 @@ return {
         -- is found.
         javascript = { 'prettierd' },
         javascriptreact = { 'prettierd' },
+        markdown = { 'prettierd' },
         typescript = { 'prettierd' },
         typescriptreact = { 'prettierd' },
         json = { 'prettierd' },

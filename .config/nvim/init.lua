@@ -111,18 +111,6 @@ vim.keymap.set('n', '<C-k>', ':bprevious<CR>', { desc = 'Focus previous buffer',
 vim.keymap.set('n', '<C-w>', ':bd<CR>', { nowait = true, desc = 'Close buffer', noremap = true, silent = true })
 
 vim.keymap.set('n', '<leader>p', '<Plug>MarkdownPreviewToggle', { desc = 'Markdown [P]review Toggle' })
-vim.keymap.set(
-  'n',
-  '<leader>g',
-  ':silent !zellij run -fc -x 6\\% -y 6\\% --width 88\\% --height 88\\% -- env XDG_CONFIG_HOME=$HOME/.config lazygit<CR>',
-  { desc = 'Lazy[G]it', noremap = true, silent = true }
-)
-vim.keymap.set(
-  'n',
-  '<leader>e',
-  ':silent !zellij run -f -x 6\\% -y 6\\% --width 88\\% --height 88\\% -- bash ~/.config/yazi-picker.sh <CR>',
-  { desc = 'File [E]xplorer', noremap = true, silent = true }
-)
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
