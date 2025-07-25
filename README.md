@@ -27,6 +27,6 @@ Symlink dotfiles with stow:
 
 ## nvim
 
-`:LspInfo`
-`:Mason`
-`:LspRestart`
+- `:LspInfo`
+- `:Mason`
+- `:LspRestart`
