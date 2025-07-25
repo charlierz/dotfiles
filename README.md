@@ -30,3 +30,15 @@ Symlink dotfiles with stow:
 - `:LspInfo`
 - `:Mason`
 - `:LspRestart`
+
+## gnome
+
+```
+gsettings set org.gnome.shell.keybindings switch-to-application-1 "['<Super><Ctrl><Shift>j']"
+gsettings set org.gnome.shell.keybindings switch-to-application-2 "['<Super><Ctrl><Shift>k']"
+gsettings set org.gnome.shell.keybindings switch-to-application-3 "['<Super><Ctrl><Shift>l']"
+gsettings set org.gnome.shell.keybindings switch-to-application-4 "['<Super><Ctrl><Shift>u']"
+gsettings set org.gnome.shell.keybindings switch-to-application-5 "['<Super><Ctrl><Shift>i']"
+gsettings set org.gnome.shell.keybindings switch-to-application-6 "['<Super><Ctrl><Shift>o']"
+gsettings set org.gnome.shell.keybindings switch-to-application-7 "['<Super><Ctrl><Shift>m']"
+```
