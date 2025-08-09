@@ -2,6 +2,7 @@ if test (uname -s) = "Linux"
     # --- linux settings ---
     fish_add_path /usr/local/go/bin
     fish_add_path /home/charlierz/.local/share/pnpm
+    fish_add_path /home/charlierz/.local/share/fnm
 else if test (uname -s) = "Darwin"
     # --- macOS settings ---
     fish_add_path "$HOME/Development/flutter"

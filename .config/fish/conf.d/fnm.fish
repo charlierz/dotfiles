@@ -1,1 +1,3 @@
-fnm env --use-on-cd --shell fish | source
+if command -v fnm &> /dev/null
+  fnm env --use-on-cd --shell fish | source
+end
