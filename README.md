@@ -18,6 +18,9 @@ Symlink dotfiles with stow:
 - https://github.com/ajeetdsouza/zoxide
 - https://github.com/sxyazi/yazi
 - https://github.com/eza-community/eza
+- https://github.com/mpv-player/mpv
+- https://github.com/Samillion/ModernZ
+- https://github.com/dirkvdb/ffmpegthumbnailer
 
 ## fzf
 
