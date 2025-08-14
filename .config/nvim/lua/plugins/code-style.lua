@@ -78,6 +78,7 @@ return {
         json = { 'prettierd' },
         svelte = { 'prettierd' },
         dart = { 'dart_format' },
+        rust = { 'rustfmt', lsp_format = 'fallback' },
       },
       -- formatters = {
       --   dart_format = {
