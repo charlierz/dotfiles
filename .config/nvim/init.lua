@@ -112,6 +112,9 @@ vim.keymap.set('n', '<C-w>', ':bd<CR>', { nowait = true, desc = 'Close buffer', 
 
 vim.keymap.set('n', '<leader>p', '<Plug>MarkdownPreviewToggle', { desc = 'Markdown [P]review Toggle' })
 
+-- Toggle markdown checkbox
+vim.keymap.set('n', '<leader>tt', ":lua require('toggle-checkbox').toggle()<CR>", { desc = 'Toggle markdown checkbox' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -191,6 +194,8 @@ require('lazy').setup {
     end,
     ft = { 'markdown' },
   },
+
+  { 'opdavies/toggle-checkbox.nvim' },
 
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
