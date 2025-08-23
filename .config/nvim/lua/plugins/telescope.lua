@@ -1,7 +1,6 @@
 return { -- Fuzzy Finder (files, lsp, etc)
   'nvim-telescope/telescope.nvim',
   event = 'VimEnter',
-  branch = '0.1.x',
   dependencies = {
     'nvim-lua/plenary.nvim',
     {
@@ -42,6 +41,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     -- Telescope picker. This is really useful to discover what Telescope can
     -- do as well as how to actually do it!
     --
+
     local actions = require 'telescope.actions'
 
     -- [[ Configure Telescope ]]
@@ -53,7 +53,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
       defaults = {
         mappings = {
           i = {
-            -- i = { ['<c-enter>'] = 'to_fuzzy_refine' },
+            ['<C-f>'] = 'to_fuzzy_refine',
             ['<esc>'] = actions.close,
           },
         },
