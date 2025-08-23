@@ -25,6 +25,7 @@ end
 if status is-interactive
     fish_config theme choose "Dracula"
     fish_vi_key_bindings
+    bind --mode insert \cf forward-char # accept autosuggestion with ctrl+f
 end
 
 set -g fish_greeting # disable fish greeting
@@ -39,3 +40,10 @@ alias g="lazygit"
 alias e="yazi"
 alias v="nvim"
 
+function comfy
+    cd /home/charlierz/ComfyUI
+    if not set -q VIRTUAL_ENV
+        . venv/bin/activate.fish
+    end
+    python main.py
+end
