@@ -5,9 +5,19 @@ show-model-warnings: false
 watch-files: true
 map-tokens: 4096
 
-model: gemini
-edit-format: diff-fenced
+# model: gemini
+# edit-format: diff-fenced
+
+model: ds
+edit-format: diff
+reasoning-effort: high
 
 alias:
+  - "ds:openrouter/deepseek/deepseek-chat-v3.1"
+  - "5:openrouter/openai/gpt-5"
+  - "5-mini:openrouter/openai/gpt-5-mini"
   - "or-gemini:openrouter/google/gemini-2.5-pro"
   - "or-flash:openrouter/google/gemini-2.5-flash"
+  - "oss:ollama_chat/gpt-oss:20b"
+  - "qwen:ollama_chat/qwen3-coder:30b"
+
