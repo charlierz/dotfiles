@@ -1,8 +1,13 @@
 if test (uname -s) = "Linux"
     # --- linux settings ---
     fish_add_path /usr/local/go/bin
+    fish_add_path /home/charlierz/bin
     fish_add_path /home/charlierz/.local/share/pnpm
     fish_add_path /home/charlierz/.local/share/fnm
+    # set -x PATH /usr/local/cuda/bin $PATH
+    # set -x LD_LIBRARY_PATH /usr/local/cuda/lib64 $LD_LIBRARY_PATH
+    # set -x CUDA_HOME /usr/local/cuda
+    fish_add_path /home/charlierz/.opencode/bin
 else if test (uname -s) = "Darwin"
     # --- macOS settings ---
     fish_add_path "$HOME/Development/flutter"
@@ -41,9 +46,21 @@ alias e="yazi"
 alias v="nvim"
 
 function comfy
-    cd /home/charlierz/ComfyUI
+    cd /home/charlierz/ComfyUI312
     if not set -q VIRTUAL_ENV
         . venv/bin/activate.fish
     end
-    python main.py
+    python main.py --output-directory /mnt/workspace/output
+end
+
+function iw
+    cd /home/charlierz/dev/nunif
+    if not set -q VIRTUAL_ENV
+        . venv/bin/activate.fish
+    end
+    python -m iw3.gui
+end
+
+function activate
+    . venv/bin/activate.fish
 end

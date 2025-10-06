@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Diff Checker
+Exec=/opt/diff-checker/diff-checker
+Terminal=false
+Type=Application
+X-GNOME-Autostart-enabled=true
