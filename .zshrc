@@ -108,8 +108,7 @@ source $ZSH/oh-my-zsh.sh
 
 if [ "$(uname -s)" = "Darwin" ]; then
   export PATH=$PATH:$(go env GOPATH)/bin
-  export PATH="$PATH:$HOME/Development/flutter"
-  export PATH="$PATH:$HOME/Development/flutter/bin"
+  export PATH="$HOME/.fvm_flutter/bin:$PATH"
   export PATH="$PATH":"$HOME/.pub-cache/bin"
 
   # genesis
@@ -177,6 +176,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# fnm
+eval "$(fnm env --use-on-cd --shell zsh)"
+
 # fzf
 source <(fzf --zsh)
 
@@ -220,3 +222,13 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# genesis-cli content start
+. /Users/carlos/.genesis/genesis.env
+# genesis-cli content end
+
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/carlos/.lmstudio/bin"
+# End of LM Studio CLI section
+

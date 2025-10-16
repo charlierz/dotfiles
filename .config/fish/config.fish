@@ -18,10 +18,13 @@ else if test (uname -s) = "Darwin"
     fish_add_path "$HOME/.local/bin" # For aider
     fish_add_path "$HOME/Library/Application Support/fnm"
     fish_add_path /opt/homebrew/bin
+    fish_add_path "$HOME/.fvm_flutter/bin"
+    fish_add_path "$HOME/fvm/default/bin"
     set -gx AFFINIDI_SERVICE_TS /.../affinidi-service-ts
     set -gx GENESIS_LIBS /.../libs
     set -gx AWS_PROFILE affinidi-elements-dev-dev-portal-bff:Developer
     set -gx XDG_CONFIG_HOME "$HOME/.config" # For lazygit config location
+    set -gx PATH $PATH /Users/carlos/.lmstudio/bin # For LM Studio CLI
     alias pj 'npx projen'
     alias bd './bin/dev.js'
     alias br './bin/run.js'
