@@ -20,6 +20,7 @@ else if test (uname -s) = "Darwin"
     fish_add_path /opt/homebrew/bin
     fish_add_path "$HOME/.fvm_flutter/bin"
     fish_add_path "$HOME/fvm/default/bin"
+    fish_add_path /Users/carlos/.opencode/bin
     set -gx AFFINIDI_SERVICE_TS /.../affinidi-service-ts
     set -gx GENESIS_LIBS /.../libs
     set -gx AWS_PROFILE affinidi-elements-dev-dev-portal-bff:Developer
