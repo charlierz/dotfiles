@@ -49,12 +49,20 @@ alias g="lazygit"
 alias e="yazi"
 alias v="nvim"
 
-function comfy
-    cd /home/charlierz/ComfyUI312
+function ci
+    cd /home/charlierz/ComfyImage
     if not set -q VIRTUAL_ENV
         . venv/bin/activate.fish
     end
-    python main.py --output-directory /mnt/workspace/output
+    python main.py --output-directory /mnt/workspace/output --port 8188
+end
+
+function cv
+    cd /home/charlierz/ComfyVideo
+    if not set -q VIRTUAL_ENV
+        . venv/bin/activate.fish
+    end
+    python main.py --output-directory /mnt/workspace/output --port 8189
 end
 
 function iw
