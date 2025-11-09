@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Stash
+Exec=/home/charlierz/bin/stash-linux
+Terminal=false
+Type=Application
+X-GNOME-Autostart-enabled=true

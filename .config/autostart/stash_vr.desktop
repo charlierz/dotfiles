@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Stash VR
+Exec=/home/charlierz/bin/stash-vr --STASH_GRAPHQL_URL=http://192.168.0.166:9999/graphql
+Terminal=false
+Type=Application
+X-GNOME-Autostart-enabled=true
